@@ -1,0 +1,23 @@
+<h2>Sign Up</h2>
+<%= form_with model: @user,  url:user_index_path do |f| %>
+
+<%= f.label :email, "Email" %>
+<%= f.text_field :email, placeholder: "admin@example.com" %>
+ 
+
+
+<%= f.label :password, "Password" %>
+<%= f.password_field :password %>
+
+
+<%= f.label :password, " Confirm Password" %>
+<%= f.password_field :password %>
+
+<%= f.submit "Sign Up" %>
+<% end %>
+
+<br>
+<br>
+<p>If you already have account.<p>
+<%= link_to "Sign In", sign_in_path %>
+  

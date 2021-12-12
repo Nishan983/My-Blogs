@@ -1,17 +1,18 @@
 <h2>Create New Blog</h2>
 
 <%= form_with model: @blog, url:blog_new_path do |f| %>
-  <div class="mb-3">
-    <%= f.label :title %><br>
-    <%= f.text_field :title, class:"form-control" %>
-  </div>
+<div class="mb-3">
+  <%= f.label :title %><br>
+  <%= f.text_field :title, class:"form-control" %>
+</div>
 
-  <div class="mb-3">
-    <%= f.label :body  %><br>
-    <%= f.text_area :body, class:"form-control"%>
-  </div>
+<div class="mb-3">
+  <%= f.label :body  %><br>
+  <%= f.text_area :body, class:"form-control"%>
+</div>
 
-  <div>
-    <%= f.submit %>
-  </div>
+<div>
+  <%= f.submit %>
+</div>
+
 <% end %>

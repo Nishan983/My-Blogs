@@ -1,6 +1,6 @@
 <h2>Edit Blog</h2>
 
-<%= form_with model: @blog, url:update_blog_path do |f| %>
+<%= form_with( model: @blog, url:update_blog_path) do |f| %>
   <div class="mb-3">
     <%= f.label :title %><br>
     <%= f.text_field :title, class:"form-control" %>
@@ -14,4 +14,9 @@
   <div>
     <%= f.submit %>
   </div>
+
+  
+      
+  <% end %>
+    
 <% end %>

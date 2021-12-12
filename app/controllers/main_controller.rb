@@ -1,6 +1,10 @@
 class MainController < ApplicationController
     def index
-    @blogs = Blog.all
+        if Current.user       
+         @blogs = Blog.all
+        else
+         redirect_to  user_index_path
+        end
     end
 
     def new
