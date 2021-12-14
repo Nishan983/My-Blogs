@@ -19,7 +19,7 @@ class UserController < ApplicationController
       session[:id]=user.id
       redirect_to :blog 
     else
-      render :text => "Login unsucessful."
+      redirect_to :sign_in , notice: "Invalid email or password."
     end
   end
 
@@ -28,7 +28,7 @@ class UserController < ApplicationController
     @user  = User.new(user_params)
 
     if @user.save
-      redirect_to log_in_path
+      redirect_to log_in_path , notice: "Please Login to access your blogs."
     else
       render :index
     end
@@ -36,7 +36,7 @@ class UserController < ApplicationController
 
   private 
   def user_params
-    params.require(:user).permit(:email,:password)
+    params.require(:user).permit(:email,:password,:password_confirmation)
   end
 
 

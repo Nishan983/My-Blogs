@@ -1,6 +1,14 @@
 <h2>Edit Blog</h2>
 
 <%= form_with( model: @blog, url:update_blog_path) do |f| %>
+<% if @blog.errors.any? %>
+    <ul>
+    <% @blog.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  <% end %>
+
   <div class="mb-3">
     <%= f.label :title %><br>
     <%= f.text_field :title, class:"form-control" %>
@@ -14,9 +22,5 @@
   <div>
     <%= f.submit %>
   </div>
-
-  
-      
+ 
   <% end %>
-    
-<% end %>

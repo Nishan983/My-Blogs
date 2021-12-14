@@ -1,7 +1,8 @@
 class MainController < ApplicationController
     def index
-        if Current.user       
-         @blogs = Blog.all
+        if Current.user
+            @user = User.find_by(id: Current.user.id)       
+         @blogs = @user.blogs
         else
          redirect_to  user_index_path
         end
@@ -51,6 +52,6 @@ class MainController < ApplicationController
 
     private
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body).merge(user_id: Current.user.id)
     end
 end
