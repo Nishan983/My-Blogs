@@ -34,6 +34,17 @@ class UserController < ApplicationController
     end
   end
 
+  def delete_account
+    @user = User.find_by(id: Current.user.id)       
+    if @user.destroy
+      redirect_to  user_index_path
+    else
+      redirect_to blog_path 
+    end
+  end
+
+
+
   private 
   def user_params
     params.require(:user).permit(:email,:password,:password_confirmation)

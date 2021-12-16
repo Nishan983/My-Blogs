@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get "/user/sign_in" , to: "user#signin" , as: "sign_in"
   post "/user/sign_in", to: "user#login"  , as: "log_in"
   post '/user/logout', to: 'user#logout' , as: 'log_out'
+  delete '/user/delete', to: 'user#delete_account' , as: 'delete_user'
+
+
 
 
   resources :user
