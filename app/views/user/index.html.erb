@@ -1,39 +1,64 @@
-<h2>Sign Up</h2>
-<%= form_with model: @user,  url:user_index_path do |f| %>
+<%# <div class="container-fluid"> %>
+    <div class="row">
+        <%# <div class="">
+            <img src="https://source.unsplash.com/random/900×900/?write" class=" rounded " alt="...">
+        </div> %>
+        <div class="  " style='float:right; width: 180px;' >
+            <h2>Sign Up</h2>
+            <%= form_with model: @user,  url:user_index_path do |f| %>
 
-<% if @user.errors.any?%>
-<ul>
-<% @user.errors.full_messages.each do |message|%>
-<li>
-<%= message %>
-</li>
-<%end%>
-</ul>
-<%end%>
+            <% if @user.errors.any?%>
+            <ul>
+                <% @user.errors.full_messages.each do |message|%>
+                <li>
+                    <%= message %>
+                </li>
+                <%end%>
+            </ul>
+            <%end%>
 
-<div class = "mb-3">
-<%= f.label :email, "Email:" %>
-<%= f.text_field :email, placeholder: "admin@example.com" %>
- </div>
+            <div class="mb-3">
+                <%= f.label :email, "Email:" %>
+                <%= f.text_field :email, placeholder: "admin@example.com" %>
+            </div>
 
-<div class = "mb-3">
-<%= f.label :password, "Password:" %>
-<%= f.password_field :password %>
-</div>
+            <div class="mb-3">
+                <%= f.label :password, "Password:" %>
+                <%= f.password_field :password %>
+            </div>
 
-<div class = "mb-3">
-<%= f.label :password, " Confirm Password:" %>
-<%= f.password_field :password_confirmation %>
-</div>
+            <div class="mb-3">
+                <%= f.label :password, " Confirm Password:" %>
+                <%= f.password_field :password_confirmation %>
+            </div>
 
-<div>
-<%= f.submit "Sign Up" %>
-</div>
+            <div>
+                <%= f.submit "Sign Up"   %>
+            </div>
 
-<% end %>
+            <% end %>
 
-<br>
-<br>
-<p>If you already have account.<p>
-<%= link_to "Sign In", sign_in_path %>
-  
+            <br>
+            <br>
+            <p>If you already have account.<p>
+                    <%= link_to "Sign In", sign_in_path %>
+
+
+        </div>
+    </div>
+<%# </div> %>
+
+<%# <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="..." class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div> %>

@@ -13,6 +13,7 @@ class UserController < ApplicationController
   end
   
   def login
+    # render plain: params
     user = User.find_by(email: params[:email])
 
     if user.present? && user.authenticate(params[:password])

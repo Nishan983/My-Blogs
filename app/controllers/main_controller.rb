@@ -29,6 +29,7 @@ class MainController < ApplicationController
         # @blog =Blog.new  
         # render plain: params
         @blog = Blog.find(params[:id])
+        # @users= @blog.user
     end
 
     def update
@@ -52,6 +53,6 @@ class MainController < ApplicationController
 
     private
     def blog_params
-      params.require(:blog).permit(:title, :body).merge(user_id: Current.user.id)
+      params.require(:blog).permit(:title, :body, :status,images: []).merge(user_id: Current.user.id)
     end
 end
