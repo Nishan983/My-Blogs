@@ -8,7 +8,9 @@ RSpec.describe User, type: :model do
    it { should validate_presence_of(:email) }
   end
 
-  
+  describe 'validations' do
+    it { should have_many(:blogs) }
+  end
 
   
 # it "should validate uniqueness of email" do
