@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
   describe 'check presence' do
-  subject   { create(:user,email:nil) }
+  subject   { create(:user) }
   # it { should have_many(:blogs) }
    it { should validate_presence_of(:email) }
   end
