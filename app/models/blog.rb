@@ -4,7 +4,7 @@ class Blog < ApplicationRecord
     validates :title, presence: true
     validates :body, presence: true,  length:  { minimum: 2 }
 
-    enum status: [
-        :draft, :archieved,:dropped, :banned, :active
-    ]
+    # enum status: [
+    #     :draft, :archieved,:dropped, :banned, :active
+    # ]
 end

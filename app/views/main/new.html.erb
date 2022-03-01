@@ -1,3 +1,13 @@
+<%# <%# form_with model: @blog, url:blog_new_path do |f| %>
+<div id="custom_org_id_select_menu">
+    <%# f.select :title, ["Apple", "Google", "Microsoft", "Others"] %>    
+ </div>  
+
+  <div id="custom_org_id hide">
+    <%# f.text_field :title, label: "Others" %>
+  </div>
+<%# end %> %>
+
 <h2>Create New Blog</h2>
 
 <%= form_with model: @blog, url:blog_new_path do |f| %>
@@ -9,14 +19,9 @@
     </ul>
   <% end %>
 
-<div class="mb-3">
+<div class="mb-3" id="custom_org_id hide">
   <%= f.label :title %><br>
   <%= f.text_field :title, class:"form-control" %>
-</div>
-
-<div class="mb-3">
-  <%= f.label :status %><br>
-  <%= f.select :status, Blog.statuses.keys, class:"form-control" %>
 </div>
 
 <div class="mb-3">
